@@ -5,11 +5,14 @@
     <title>mars_rover_report</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet">
     <link href="app/css/style.min.css" rel="stylesheet" />
+    <link href="node_modules/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
     <!-- Modules -->
     <script src="app/js/app.js"></script>
     <!-- Controllers -->
     <script src="app/js/controllers/MainContent.js"></script>
+    <script src="node_modules/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+
 </head>
 
 <body ng-app="myApp">
@@ -20,7 +23,7 @@
             <br> <b>landing_date</b> : {{landingDate}}
             <br> <b>launch_date</b> : {{launchDate}}
             <br> <b>total_photos</b> : {{total_photos}}</p>
-        <img class="logo_nasa" src="https://www.dafont.com/forum/attach/orig/5/2/524557.png" />
+        <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
         <div class="grid">
             <div class="img_grid_container">
                 <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}}
