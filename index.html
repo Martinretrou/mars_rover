@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>A.P.O.D</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet">
+    <link href="app/css/style.min.css" rel="stylesheet" />
+    <link href="node_modules/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <!-- Modules -->
+    <script src="app/js/app.js"></script>
+    <!-- Controllers -->
+    <script src="app/js/controllers/MainContent.js"></script>
+    <script src="node_modules/angularjs-datepicker/src/js/angular-datepicker.js"></script>
+    <script src="node_modules/lazysizes/lazysizes.min.js" async=""></script>
+</head>
+
+<body ng-app="myApp">
+        <div class="container_logo">APOD</div>
+        <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png"/>
+    <div class="main" ng-controller="MainContent">
+        <img src="{{hdurl}}" class="main_img" />
+        <div class="container_desc">
+            <h1>{{title}}</h1>
+            <p><strong>Copyright :</strong> {{copyright}}</p>
+            <p>{{explanation}}</p>
+            <p class="credits">From Astronomy Picture of the Day / NASA</p>
+            <div class="container_date">
+                <h3>Want to see a specific date ?</h3>
+                <form ng-submit="request()">
+                    <datepicker date-format="yyyy-MM-dd">
+                        <input ng-model="date" type="text"/>
+                    </datepicker>
+                    <button type="submit">Go to this date</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+</body>
+
+</html>
