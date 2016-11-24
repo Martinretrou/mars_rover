@@ -27,10 +27,25 @@ app.controller('MainContent', function($scope, $http) {
     }).then(function successCallback(response) {
         console.log(response);
 
+        $scope.responseJSON = response;
+        $scope.url = response.data.photos;
+
+        $scope.urltest = [];
+
+        angular.forEach($scope.url, function(img_src){
+                   console.log(img_src.img_src); 
+                   $scope.urltest.push(img_src); 
+        })
+
         $scope.photo1 = response.data.photos[0].img_src;
         $scope.photo2 = response.data.photos[5].img_src;
         $scope.photo3 = response.data.photos[10].img_src;
         $scope.photo4 = response.data.photos[15].img_src;
+
+        $scope.id1 = response.data.photos[0].id;
+        $scope.id2 = response.data.photos[5].id;
+        $scope.id3 = response.data.photos[10].id;
+        $scope.id4 = response.data.photos[15].id;
 
         $scope.sol = response.data.photos[0].sol;
         $scope.date = response.data.photos[0].earth_date;

@@ -22,21 +22,28 @@
         <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
         <div class="grid">
             <div class="img_grid_container">
-                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> Status : {{status}}</p>
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> status : {{status}} <br> id : {{id1}}</p>
                 <img src="{{photo1}}" class="img_grid" />
             </div>
             <div class="img_grid_container">
-                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> Status : {{status}}</p>
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> status : {{status}} <br> id : {{id2}}</p>
                 <img src="{{photo2}}" class="img_grid" />
             </div>
             <div class="img_grid_container">
-                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> Status : {{status}}</p>
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> status : {{status}} <br> id : {{id3}}</p>
                 <img src="{{photo3}}" class="img_grid" />
             </div>
             <div class="img_grid_container">
-                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> Status : {{status}}</p>
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> status : {{status}} <br> id : {{id4}}</p>
                 <img src="{{photo4}}" class="img_grid" />
             </div>
+                <h1 id="choice" class="mt-3">Want to see all the pictures taken yesterday by {{rover}} ?</h1>
+                <h3>Warning: The number of pictures ranges from 10 to 100, it might take some time to load.</h3>
+                <div class="container-btn">
+                    <a href="" ng-click="showme=true">Show</a>
+                    <button ng-click="showme=false">Hide</button> 
+                </div>
+                <img ng-show="showme" ng-repeat="img_src in url" src={{img_src.img_src}} class="img_grid_spe mt-3"/> 
         </div>
     </div>
 </body>
