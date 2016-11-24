@@ -30,7 +30,7 @@ header {
   font-family: "Roboto", sans-serif;
   font-weight: 700;
   font-size: 2em;
-  color: #FFF;
+  color: #000;
   z-index: 3; }
 
 .logo_nasa {
@@ -46,59 +46,35 @@ header {
   margin: 0 auto;
   z-index: 2; }
 
-.main_img {
-  width: 100%;
-  z-index: 2; }
+.grid {
+  padding-top: 30vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
 
-.container_desc {
+.img_grid_container {
+  position: relative;
+  display: inline-block;
+  width: 40%;
+  height: auto; }
+
+.text_info_global {
+  z-index: 10;
   position: absolute;
-  z-index: 3;
-  width: 60%;
-  left: 0;
-  right: 0;
-  margin: 0 auto;
-  margin-top: -15%;
-  background-color: #FFF;
-  padding: 2em 3em;
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23); }
+  top: 50px;
+  left: 20px;
+  color: #000; }
 
-.text_bg {
+.text_img_grid {
+  z-index: 10;
   position: absolute;
-  top: 20%;
-  z-index: 1;
-  opacity: 0.1;
-  font-family: "Roboto", sans-serif;
-  font-weight: 700;
-  color: #9D9D9C;
-  font-size: 25em; }
+  bottom: 10px;
+  right: 10px;
+  color: #FFF; }
 
-.credits {
+.img_grid {
   width: 100%;
-  float: right;
-  text-align: right;
-  opacity: 0.7; }
-
-.container_date {
-  width: 50%; }
-  .container_date button {
-    margin-top: 5%;
-    width: 150px;
-    height: 30px;
-    border: none;
-    border-radius: 5px;
-    background-color: #1A5DAD;
-    color: white;
-    cursor: pointer; }
-    .container_date button:hover {
-      opacity: 0.8; }
-    .container_date button:focus {
-      outline: 0; }
-
-.blur-up {
-  -webkit-filter: blur(5px);
-  filter: blur(5px);
-  transition: filter 400ms, -webkit-filter 400ms; }
-
-.blur-up.lazyloaded {
-  -webkit-filter: blur(0);
-  filter: blur(0); }
+  z-index: 2;
+  margin: 0px;
+  display: inline-block; }

@@ -2,7 +2,7 @@
 <html>
 
 <head>
-    <title>A.P.O.D</title>
+    <title>mars_rover_report</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet">
     <link href="app/css/style.min.css" rel="stylesheet" />
     <link href="node_modules/angularjs-datepicker/src/css/angular-datepicker.css" rel="stylesheet" type="text/css" />
@@ -16,27 +16,29 @@
 </head>
 
 <body ng-app="myApp">
-        <div class="container_logo">APOD</div>
-        <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png"/>
     <div class="main" ng-controller="MainContent">
-        <img src="{{hdurl}}" class="main_img" />
-        <div class="container_desc">
-            <h1>{{title}}</h1>
-            <p><strong>Copyright :</strong> {{copyright}}</p>
-            <p>{{explanation}}</p>
-            <p class="credits">From Astronomy Picture of the Day / NASA</p>
-            <div class="container_date">
-                <h3>Want to see a specific date ?</h3>
-                <form ng-submit="request()">
-                    <datepicker date-format="yyyy-MM-dd">
-                        <input ng-model="date" type="text"/>
-                    </datepicker>
-                    <button type="submit">Go to this date</button>
-                </form>
+        <div class="container_logo">mars_rover_report {{date}}</div>
+        <p class="text_info_global"><b>{{rover}}</b> / <b>SOL</b> : {{sol}} <br> <b>status</b> : {{status}} <br> <b>landing_date</b> : {{landingDate}} <br> <b>launch_date</b> : {{launchDate}} <br> <b>total_photos</b> : {{total_photos}}</p>
+        <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
+        <div class="grid">
+            <div class="img_grid_container">
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> Status : {{status}}</p>
+                <img src="{{photo1}}" class="img_grid" />
+            </div>
+            <div class="img_grid_container">
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> Status : {{status}}</p>
+                <img src="{{photo2}}" class="img_grid" />
+            </div>
+            <div class="img_grid_container">
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> Status : {{status}}</p>
+                <img src="{{photo3}}" class="img_grid" />
+            </div>
+            <div class="img_grid_container">
+                <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}} <br> Status : {{status}}</p>
+                <img src="{{photo4}}" class="img_grid" />
             </div>
         </div>
     </div>
-    
 </body>
 
 </html>
