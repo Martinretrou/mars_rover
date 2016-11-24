@@ -22,7 +22,7 @@ app.controller('MainContent', function($scope, $http) {
     $http({
         method: 'GET',
         dataType: "json",
-        contentType: "application/json; charset=utf-8",
+        contentType: "text/plain",
         url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=' + today + '&api_key=' + apiKey,
     }).then(function successCallback(response) {
         console.log(response);
@@ -33,7 +33,6 @@ app.controller('MainContent', function($scope, $http) {
         $scope.urltest = [];
 
         angular.forEach($scope.url, function(img_src) {
-            console.log(img_src.img_src);
             $scope.urltest.push(img_src);
         })
 
