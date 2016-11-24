@@ -1,28 +1,28 @@
 app.controller('MainContent', function($scope, $http) {
 
-  var apiKey    = 'fhXBsHhORdxBVMqvBOHwouMKm8VpE4zSYrXIaIH4',
-      
+    var apiKey = 'fhXBsHhORdxBVMqvBOHwouMKm8VpE4zSYrXIaIH4',
 
-   today = new Date(),
-   dd = today.getDate(),
-   mm = today.getMonth()+1,
-   yyyy = today.getFullYear();
-  
-   if(dd<10) {
-       dd='0'+dd
-   } 
-   
-   if(mm<10) {
-       mm='0'+mm
-   } 
 
-   today = yyyy+'-'+mm+'-'+ (dd - 1);
+        today = new Date(),
+        dd = today.getDate(),
+        mm = today.getMonth() + 1,
+        yyyy = today.getFullYear();
 
-//xhr on yesterday's date to be able to assure content
+    if (dd < 10) {
+        dd = '0' + dd
+    }
+
+    if (mm < 10) {
+        mm = '0' + mm
+    }
+
+    today = yyyy + '-' + mm + '-' + (dd - 1);
+
+    //xhr on yesterday's date to be able to assure content
     $http({
         method: 'GET',
-        dataType:"json",
-        contentType:"application/json; charset=utf-8",
+        dataType: "json",
+        contentType: "application/json; charset=utf-8",
         url: 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=' + today + '&api_key=' + apiKey,
     }).then(function successCallback(response) {
         console.log(response);
@@ -32,9 +32,9 @@ app.controller('MainContent', function($scope, $http) {
 
         $scope.urltest = [];
 
-        angular.forEach($scope.url, function(img_src){
-                   console.log(img_src.img_src); 
-                   $scope.urltest.push(img_src); 
+        angular.forEach($scope.url, function(img_src) {
+            console.log(img_src.img_src);
+            $scope.urltest.push(img_src);
         })
 
         $scope.photo1 = response.data.photos[0].img_src;
@@ -59,34 +59,4 @@ app.controller('MainContent', function($scope, $http) {
         console.log('Something went wrong...');
     });
 
-
-//xhr request on specific date 
-    $scope.request = function() {
-      $http({
-        method: 'GET',
-        dataType:"json",
-        contentType:"application/json; charset=utf-8",
-        params:{
-          date: $scope.date,
-        },
-        url: 'https://api.nasa.gov/planetary/apod?api_key=' + apiKey,
-    }).then(function successCallback(response) {
-        $scope.copyright = response.data.copyright;
-        $scope.date = response.data.date;
-        $scope.explanation = response.data.explanation;
-        $scope.hdurl = response.data.hdurl;
-        $scope.url = response.data.url;
-        $scope.title = response.data.title;
-
-    }, function errorCallback(response) {
-        console.log('Something went wrong...');
-    });
-    }
-    
 });
-
-
-
-
-
-
