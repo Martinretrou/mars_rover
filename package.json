@@ -14,6 +14,7 @@
     "angular-aria": "^1.5.8",
     "angular-material": "^1.1.1",
     "angularjs-datepicker": "^2.1.6",
+    "animate.css": "^3.5.2",
     "dotenv": "^2.0.0",
     "lazysizes": "^2.0.7",
     "moment": "^2.15.2"

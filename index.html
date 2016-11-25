@@ -15,15 +15,22 @@
 </head>
 
 <body ng-app="myApp">
-    <div class="main" ng-controller="MainContent">
+    <div class="main" ng-controller="MainContent" id="top">
         <div class="container_logo">mars_rover_report {{date}}</div>
-        <p class="text_info_global"><b>{{rover}}</b> / <b>SOL</b> : {{sol}}
+        <p ng-hide="modal" class="text_info_global"><b>{{rover}}</b> / <b>SOL</b> : {{sol}}
             <br> <b>status</b> : {{status}}
             <br> <b>landing_date</b> : {{landingDate}}
             <br> <b>launch_date</b> : {{launchDate}}
-            <br> <b>total_photos</b> : {{total_photos}}</p>
-        <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
+            <br> <b>total_photos</b> : {{total_photos}}
+            <br> <b>today_photos</b> : {{today_photos}}</p>
+        <a href="#top">
+            <img class="logo_nasa" src="http://www.dafont.com/forum/attach/orig/5/2/524557.png" />
+        </a>
         <div class="grid">
+        <div ng-show="modal" class="modal">
+            <h1>{{error}}</h1>
+            <h3>{{errordesc}}</h3>
+        </div>
             <div class="img_grid_container">
                 <p class="text_img_grid"><b>{{rover}}</b> / SOL : {{sol}}
                     <br> status : {{status}}
@@ -49,10 +56,10 @@
                 <img src="{{photo4}}" class="img_grid" />
             </div>
             <h1 id="choice" class="mt-3">Want to see all the pictures taken yesterday by {{rover}} ?</h1>
-            <h3>Warning: The number of pictures ranges from 10 to 100, it might take some time to load.</h3>
+            <h3>Warning: The number of pictures ranges from 1 to 300 (and even more), it might take some time to load.</h3>
             <div class="container-btn">
                 <a href="" ng-click="showme=true">Show</a>
-                <button ng-click="showme=false">Hide</button>
+                <button ng-show="showme" ng-click="showme=false">Hide</button>
             </div>
             <img ng-show="showme" ng-repeat="img_src in url" src={{img_src.img_src}} class="img_grid_spe mt-3" />
         </div>

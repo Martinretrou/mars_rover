@@ -26,6 +26,7 @@ h3 {
     width: 100%;
     text-align: center;
     margin-top: 5px;
+    margin-bottom: 2em;
 }
 
 p {
@@ -59,6 +60,10 @@ header {
     z-index: 3;
     top: 20px;
     right: 20px;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 .mt-3 {
@@ -122,7 +127,7 @@ header {
 }
 
 .img_grid_spe {
-    display: inline-block;
+    display: block;
 }
 
 .img_grid_container {
@@ -152,7 +157,18 @@ header {
     width: 100%;
     z-index: 2;
     margin: 0px;
+    margin-bottom: -5px;
     display: inline-block;
+}
+
+.modal {
+    position: fixed;
+    z-index: 10;
+    width: 100%;
+    height:100vh;
+    background-color: #FFF;
+    text-align: center;
+    opacity: 1;
 }
 
 @media #{$m-screen} {}
